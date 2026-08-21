@@ -30,10 +30,8 @@ requires:
 
 | You can                                                                | Because                                                                                                    |
 | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| skip [`/grill`](skills/grill/SKILL.md)                                 | [`/to-spec`](skills/to-spec/SKILL.md) synthesises the conversation; it never interviews you                |
 | skip [`/to-spec`](skills/to-spec/SKILL.md)                             | [`/to-tickets`](skills/to-tickets/SKILL.md) reads the conversation and proposes the slug itself            |
-| run [`/code-review`](skills/code-review/SKILL.md) any time             | it needs a fixed point, not a ticket — if no ticket, standards review only                                 |
-| type the four skills underneath                                        | they are ordinary commands as well                                                                         |
+| run [`/code-review`](skills/code-review/SKILL.md) any time             | if no ticket, standards review only                                                                        |
 | re-run [`/to-tickets`](skills/to-tickets/SKILL.md) on the same feature | it publishes alongside the tickets already there                                                           |
 | [`/implement`](skills/implement/SKILL.md) with no tickets              | a ticket, a spec, and the settled conversation are all valid sources; with no ticket it marks nothing done |
 
@@ -57,8 +55,8 @@ Other things worth knowing:
 - **Different issue tracker** → rewrite `docs/agents/issue-tracker.md`.
 - **Different test conventions** → [`tdd/tests.md`](skills/tdd/tests.md) and [`tdd/mocking.md`](skills/tdd/mocking.md) are
   examples, not rules. Replace them with your language's.
-- **Different review standards** → drop a `CODING_STANDARDS.md` or
-  `CONTRIBUTING.md` in your repo. [`code-review`](skills/code-review/SKILL.md) finds it and lets it override the
+- **Different review standards** → drop a `CODING_STANDARDS.md` in your repo.
+  [`code-review`](skills/code-review/SKILL.md) finds it and lets it override the
   built-in smell baseline. There is nothing to configure.
 - **Adding a skill** → if another skill needs to call it, leave
   `disable-model-invocation` off. If only you start it, set it to `true` and pay
