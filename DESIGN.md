@@ -44,9 +44,11 @@ requires:
 
 Other things worth knowing:
 
-- **[`setup-skills`](skills/setup-skills/SKILL.md) does not touch `CLAUDE.md` or `AGENTS.md`.** The skills read
-  `docs/agents/*.md` by path.
+- **[`setup-skills`](skills/setup-skills/SKILL.md) appends a `## Language` block to `AGENTS.md`,** and nothing
+  else — that file is always in context, so no skill needs a pointer to it. Everything else the skills read is
+  `docs/agents/*.md`, by path.
 - **Re-running [`setup-skills`](skills/setup-skills/SKILL.md) replaces both adapters** with the seed versions.
+  An existing `## Language` block is left alone.
 - **[`implement`](skills/implement/SKILL.md) commits.** Default to current branch. Branch first if that matters.
 - **One ticket per fresh context window.** Tickets are sized for that.
 
