@@ -12,7 +12,7 @@ Derived from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT).
 npx skills add loijilai/skills
 ```
 
-**Select all ten.** They call each other, and a missing skill fails quietly.
+**Select all eleven.** They call each other, and a missing skill fails quietly.
 
 Re-run the same command to update.
 
@@ -38,6 +38,7 @@ flowchart LR
 | [`/to-spec`](skills/to-spec/SKILL.md)                | after /grill\*                      | `issues/<feature>/spec.md`                                  |
 | [`/to-tickets`](skills/to-tickets/SKILL.md)          | after /to-spec                      | `issues/<feature>/NN-<slug>.md`                             |
 | [`/implement`](skills/implement/SKILL.md)            | after /to-tickets, or on a spec or the settled conversation | source, tests, completed criteria, `Status: done`, a commit |
+| [`/mentor`](skills/mentor/SKILL.md)                  | any time, on a PR, commit, spec, ticket, or the conversation — outside the pipeline | -                                     |
 
 ## Design
 

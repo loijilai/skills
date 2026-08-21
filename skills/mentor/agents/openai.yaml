@@ -1,0 +1,5 @@
+interface:
+  display_name: "Mentor"
+  short_description: "Learn deeply from real work — taught, not told"
+policy:
+  allow_implicit_invocation: false
