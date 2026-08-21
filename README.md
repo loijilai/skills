@@ -26,6 +26,7 @@ flowchart LR
     G["/grill<br/>/grill-to-docs"] --> TS["/to-spec"]
     TS --> TT["/to-tickets"]
     TT --> IM["/implement"]
+    G -. "small work" .-> IM
     IM -. "next ticket,<br/>fresh context" .-> IM
 ```
 
@@ -36,7 +37,7 @@ flowchart LR
 | [`/grill-to-docs`](skills/grill-to-docs/SKILL.md)    | stateful discussion kept in repo    | `CONTEXT.md`, `docs/adr/NNNN-*.md`, lazily                  |
 | [`/to-spec`](skills/to-spec/SKILL.md)                | after /grill\*                      | `issues/<feature>/spec.md`                                  |
 | [`/to-tickets`](skills/to-tickets/SKILL.md)          | after /to-spec                      | `issues/<feature>/NN-<slug>.md`                             |
-| [`/implement`](skills/implement/SKILL.md)            | after /to-tickets                   | source, tests, completed criteria, `Status: done`, a commit |
+| [`/implement`](skills/implement/SKILL.md)            | after /to-tickets, or on a spec or the settled conversation | source, tests, completed criteria, `Status: done`, a commit |
 
 ## Design
 

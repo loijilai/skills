@@ -9,12 +9,12 @@
 You normally do not invoke these directly; the commands in the
 [README quick start](README.md#quick-start) use them as needed.
 
-| Skill                                             | Called by                                                                     | Purpose                                                                                                       |
-| ------------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| [`grilling`](skills/grilling/SKILL.md)            | [`/grill`](skills/grill/SKILL.md), [`/grill-to-docs`](skills/grill-to-docs/SKILL.md) | Questions decisions in rounds until no important assumptions remain                                           |
-| [`domain-modeling`](skills/domain-modeling/SKILL.md) | [`/grill-to-docs`](skills/grill-to-docs/SKILL.md)                          | Clarifies domain terms and records them in `CONTEXT.md`; records important trade-offs in `docs/adr/NNNN-*.md` |
-| [`tdd`](skills/tdd/SKILL.md)                      | [`/implement`](skills/implement/SKILL.md)                                     | Runs the red → green loop and keeps tests focused on stable public seams                                      |
-| [`code-review`](skills/code-review/SKILL.md)      | [`/implement`](skills/implement/SKILL.md)                                     | Reviews the change separately against repo standards and the ticket/spec                                      |
+| Skill                                                | Called by                                                                            | Purpose                                                                                                       |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| [`grilling`](skills/grilling/SKILL.md)               | [`/grill`](skills/grill/SKILL.md), [`/grill-to-docs`](skills/grill-to-docs/SKILL.md) | Questions decisions in rounds until no important assumptions remain                                           |
+| [`domain-modeling`](skills/domain-modeling/SKILL.md) | [`/grill-to-docs`](skills/grill-to-docs/SKILL.md)                                    | Clarifies domain terms and records them in `CONTEXT.md`; records important trade-offs in `docs/adr/NNNN-*.md` |
+| [`tdd`](skills/tdd/SKILL.md)                         | [`/implement`](skills/implement/SKILL.md)                                            | Runs the red → green loop and keeps tests focused on stable public seams                                      |
+| [`code-review`](skills/code-review/SKILL.md)         | [`/implement`](skills/implement/SKILL.md)                                            | Reviews the change separately against repo standards and the ticket/spec                                      |
 
 ## Principles
 
@@ -28,19 +28,19 @@ You normally do not invoke these directly; the commands in the
 **The order in the [README quick start](README.md#quick-start) is the happy path, not a rule.** What each command actually
 requires:
 
-| You can                                                                   | Because                                                                    |
-| ------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| skip [`/grill`](skills/grill/SKILL.md)                                     | [`/to-spec`](skills/to-spec/SKILL.md) synthesises the conversation; it never interviews you |
-| skip [`/to-spec`](skills/to-spec/SKILL.md)                                 | [`/to-tickets`](skills/to-tickets/SKILL.md) reads the conversation and proposes the slug itself |
-| run [`/code-review`](skills/code-review/SKILL.md) any time                 | it needs a fixed point, not a ticket — if no ticket, standards review only |
-| type the four skills underneath                                            | they are ordinary commands as well                                         |
-| re-run [`/to-tickets`](skills/to-tickets/SKILL.md) on the same feature      | it publishes alongside the tickets already there                           |
+| You can                                                                | Because                                                                                                    |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| skip [`/grill`](skills/grill/SKILL.md)                                 | [`/to-spec`](skills/to-spec/SKILL.md) synthesises the conversation; it never interviews you                |
+| skip [`/to-spec`](skills/to-spec/SKILL.md)                             | [`/to-tickets`](skills/to-tickets/SKILL.md) reads the conversation and proposes the slug itself            |
+| run [`/code-review`](skills/code-review/SKILL.md) any time             | it needs a fixed point, not a ticket — if no ticket, standards review only                                 |
+| type the four skills underneath                                        | they are ordinary commands as well                                                                         |
+| re-run [`/to-tickets`](skills/to-tickets/SKILL.md) on the same feature | it publishes alongside the tickets already there                                                           |
+| [`/implement`](skills/implement/SKILL.md) with no tickets              | a ticket, a spec, and the settled conversation are all valid sources; with no ticket it marks nothing done |
 
-| You cannot                                                       | Because                                                     |
-| ---------------------------------------------------------------- | ----------------------------------------------------------- |
-| skip [`/setup-skills`](skills/setup-skills/SKILL.md)              | four skills stop and tell you to run it                     |
-| [`/implement`](skills/implement/SKILL.md) with no tickets         | it implements the conversation, and marks nothing done      |
-| renumber tickets freely                                           | the numbering _is_ the dependency graph — blockers go first |
+| You cannot                                           | Because                                                     |
+| ---------------------------------------------------- | ----------------------------------------------------------- |
+| skip [`/setup-skills`](skills/setup-skills/SKILL.md) | four skills stop and tell you to run it                     |
+| renumber tickets freely                              | the numbering _is_ the dependency graph — blockers go first |
 
 Other things worth knowing:
 
