@@ -31,7 +31,7 @@ flowchart LR
 
 | Command                                              | When                                | What it writes                                              |
 | ---------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
-| [`/setup-skills`](skills/setup-skills/SKILL.md)      | once per repo, before anything else | `docs/agents/issue-tracker.md`, `docs/agents/domain.md`     |
+| [`/setup-skills`](skills/setup-skills/SKILL.md)      | once per repo, before anything else | `docs/agents/issue-tracker.md`, `docs/agents/domain.md`; commits only if you say so |
 | [`/grill`](skills/grill/SKILL.md)                    | stateless discussion                | -                                                           |
 | [`/grill-to-docs`](skills/grill-to-docs/SKILL.md)    | stateful discussion kept in repo    | `CONTEXT.md`, `docs/adr/NNNN-*.md`, lazily                  |
 | [`/to-spec`](skills/to-spec/SKILL.md)                | after /grill\*                      | `issues/<feature>/spec.md`                                  |
