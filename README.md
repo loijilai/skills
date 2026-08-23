@@ -39,6 +39,7 @@ flowchart LR
 | [`/to-tickets`](skills/to-tickets/SKILL.md)          | after /to-spec                      | `issues/<feature>/NN-<slug>.md`                             |
 | [`/implement`](skills/implement/SKILL.md)            | after /to-tickets, or on a spec or the settled conversation | source, tests, completed criteria, `Status: done`, a commit |
 | [`/mentor`](skills/mentor/SKILL.md)                  | any time, on a PR, commit, spec, ticket, or the conversation — outside the pipeline | -                                     |
+| [`/debrief`](skills/debrief/SKILL.md)                | any time, on a feature the AI already built and you don't understand — outside the pipeline | -                       |
 
 ## Design
 

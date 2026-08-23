@@ -1,0 +1,5 @@
+interface:
+  display_name: "Debrief"
+  short_description: "Get quizzed on a feature the AI built until you can explain it yourself"
+policy:
+  allow_implicit_invocation: false
