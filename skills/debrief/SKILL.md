@@ -37,12 +37,15 @@ Success means the user can, unprompted, walk someone else through how the featur
 
 Work through Q1, Q2, ... in order. Before each, name it ("Next: Q2 — why it's built with Y instead of Z") so the user knows where they are in the map.
 
-For each question, the user is expected to go trace the actual code themselves — not recall something you already explained — and produce: the _why_, the key point, the design decision, and any failure modes/edge cases it's guarding against (or exposed to). Since you didn't give them a walkthrough, expect them to reference specific code they looked at; if they answer in the abstract with no sign they opened the file, that's a cue to send them back to look rather than accept it.
+The question list exists to give the user a fast map of their own knowledge gaps, not to force a graded answer out of every item — and the user, not the agent, decides what's worth their time. Two controls follow from that:
 
-After each answer:
+- **Skip.** If the user says they want to skip a question (e.g. "skip", "跳過", "not important"), don't press for an answer or a reason. Give one short line stating the key point/why yourself, mark the question skipped, and move on immediately.
+- **Redirect.** The user can interject at any point — not only between questions — to redirect where the questioning goes (e.g. "less detail, more trade-offs," "skip the remaining implementation-detail questions," "go deeper on Q3's design decision"). Acknowledge it briefly, adjust the remaining questions' order/emphasis/scope to match (drop, merge, or re-weight as needed) without restarting the setup phase, and continue the loop from where you were with the adjusted set.
+
+After each answer (for questions that weren't skipped):
 
 - Correct and grounded in the code → confirm briefly, move on.
 - Correct but shallow (states _what_, not _why_, or misses a failure mode) → dig one level deeper before moving on.
 - Wrong, guessed, or genuinely stuck → point at the specific place to re-check and let them take one real attempt. If they're still off, or don't know, give the answer and the concept behind it plainly, then confirm they follow before moving on. The goal is the user learning, not the user stuck.
 
-Once all questions are through, a brief closing check is fine (e.g., "could you defend this whole design end-to-end now?") — but don't re-introduce a full explanation here either; if a gap remains, point at it directly.
+Once all questions are through, a brief closing check is fine.
