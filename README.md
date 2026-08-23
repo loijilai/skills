@@ -12,7 +12,9 @@ Derived from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT).
 npx skills add loijilai/skills
 ```
 
-**Select all eleven.** They call each other, and a missing skill fails quietly.
+**Select the "Loijilai Skills" group.** Its ten skills call each other, and a
+missing one fails quietly. `/mentor` and `/debrief` are listed separately —
+each stands alone, so pick them up only if you want them.
 
 Re-run the same command to update.
 
@@ -38,8 +40,16 @@ flowchart LR
 | [`/to-spec`](skills/to-spec/SKILL.md)                | after /grill\*                      | `issues/<feature>/spec.md`                                  |
 | [`/to-tickets`](skills/to-tickets/SKILL.md)          | after /to-spec                      | `issues/<feature>/NN-<slug>.md`                             |
 | [`/implement`](skills/implement/SKILL.md)            | after /to-tickets, or on a spec or the settled conversation | source, tests, completed criteria, `Status: done`, a commit |
-| [`/mentor`](skills/mentor/SKILL.md)                  | any time, on a PR, commit, spec, ticket, or the conversation — outside the pipeline | -                                     |
-| [`/debrief`](skills/debrief/SKILL.md)                | any time, on a feature the AI already built and you don't understand — outside the pipeline | -                       |
+
+## Outside the pipeline
+
+Standalone commands. Use any time, independent of the flow above and of each
+other.
+
+| Command                                              | When                                                                  |
+| ----------------------------------------------------- | ---------------------------------------------------------------------- |
+| [`/mentor`](skills/mentor/SKILL.md)                  | Socratic mentoring while you build something yourself — a PR, commit, spec, ticket, or the conversation |
+| [`/debrief`](skills/debrief/SKILL.md)                | quizzed and traced through a feature the AI already built, until you can explain it yourself |
 
 ## Design
 

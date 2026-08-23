@@ -1,0 +1,19 @@
+{
+  "name": "loijilai-skills",
+  "version": "1.0.0",
+  "description": "A pipeline of agent skills for taking a rough idea to reviewed, committed code: sharpen it, spec it, slice it into tickets, build them test-first, review the result.",
+  "repository": "https://github.com/loijilai/skills",
+  "license": "MIT",
+  "skills": [
+    "./skills/setup-skills",
+    "./skills/grill",
+    "./skills/grilling",
+    "./skills/grill-to-docs",
+    "./skills/to-spec",
+    "./skills/to-tickets",
+    "./skills/implement",
+    "./skills/tdd",
+    "./skills/code-review",
+    "./skills/domain-modeling"
+  ]
+}
