@@ -4,7 +4,7 @@ description: Socratic mentoring on real work — a PR, a commit, a spec, or a st
 disable-model-invocation: true
 ---
 
-Instructions for the AI agent (Claude Code, etc.). **Read both "Core Mission" and "Teaching Contract" in full before helping.**
+Reply to the author in the language the repo's `AGENTS.md`/`CLAUDE.md` `## Language` section specifies for direct replies to the user — match the author instead if they write in a different language.
 
 ## Core Mission (overrides everything else)
 

@@ -12,7 +12,7 @@ Write the per-repo configuration the other engineering skills read:
 - `docs/agents/domain.md` — where `CONTEXT.md` and ADRs live, and how to consume them
 - `AGENTS.md` — which language each kind of output is written in; appended, never overwritten
 
-The two `docs/agents/` files are copied verbatim from this skill's seed files. The other skills treat them as a behavioural contract, so copying — rather than regenerating from a description — is what keeps them identical across every repo. The language block is the exception: four lines, with one blank filled in from the user.
+The two `docs/agents/` files are copied verbatim from this skill's seed files. The other skills treat them as a behavioural contract, so copying — rather than regenerating from a description — is what keeps them identical across every repo. The language block is the exception: five lines, with one blank filled in from the user.
 
 Writing those files is the whole job. Git is an extra, and only on request — this may be someone else's repo.
 
@@ -59,6 +59,7 @@ Then append to `AGENTS.md`, creating it if absent — append only, the rest of t
 - Specs, tickets, CONTEXT.md, ADRs: <language> prose, English domain terms.
 - Code, comments, tests, commit messages: whatever the repo's documented coding standards say — `CODING_STANDARDS.md` or the like. Where none say, match the surrounding code; English when it is new.
 - docs/agents/*: English, verbatim from the skill seeds — do not translate.
+- Direct replies to the user — chat, Socratic questioning, review comments, any conversational output: <language>, unless the user writes in a different language, in which case match them.
 ```
 
 ## 4. Commit — only if step 2 said yes
