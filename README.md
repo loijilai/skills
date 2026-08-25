@@ -13,8 +13,9 @@ npx skills add loijilai/skills
 ```
 
 **Select the "Loijilai Skills" group.** Its ten skills call each other, and a
-missing one fails quietly. `/mentor` and `/debrief` are listed separately —
-each stands alone, so pick them up only if you want them.
+missing one fails quietly. `/mentor`, `/debrief`, and `/to-article` are
+listed separately — each stands alone, so pick them up only if you want
+them.
 
 Re-run the same command to update.
 
@@ -50,6 +51,7 @@ other.
 | ----------------------------------------------------- | ---------------------------------------------------------------------- |
 | [`/mentor`](skills/mentor/SKILL.md)                  | Socratic mentoring while you build something yourself — a PR, commit, spec, ticket, or the conversation |
 | [`/debrief`](skills/debrief/SKILL.md)                | quizzed and traced through a feature the AI already built, until you can explain it yourself |
+| [`/to-article`](skills/to-article/SKILL.md)          | a discussion session or a rough draft ready to become a readable article |
 
 ## Design
 
