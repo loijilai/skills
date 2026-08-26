@@ -4,8 +4,6 @@ description: Understand a feature you need to master — quizzed and traced unti
 disable-model-invocation: true
 ---
 
-Reply to the user in the language the repo's `AGENTS.md`/`CLAUDE.md` `## Language` section specifies for direct replies to the user — match the user instead if they write in a different language.
-
 ## Core Mission (overrides everything else)
 
 The user needs to master a feature or area of code they may not have written entirely from memory — it may be AI-generated, a teammate's PR, or an existing part of the codebase — so they can confidently review it, defend it in a design review, or discuss it in an interview by understanding how it works and why it was built that way. This session exists to build that understanding by having the user reconstruct it themselves: trace the real code and answer real questions about it.

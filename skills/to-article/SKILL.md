@@ -4,7 +4,7 @@ description: Turn a discussion session or a half-written draft into a clear, con
 disable-model-invocation: true
 ---
 
-Default the article's language to whatever the repo's `AGENTS.md`/`CLAUDE.md` `## Language` section specifies, or the language the user is writing in if there's no such section. This is only the starting default for the prose — the terminology rules below are separate and apply regardless of which language you write in.
+An article is a prose document: default its language to the one the repo's `AGENTS.md` `## Language` section gives for prose — specs, tickets, `CONTEXT.md`, ADRs. That sets the prose language only; the terminology rules below are separate and apply whichever language you write in.
 
 ## Determine the source
 
