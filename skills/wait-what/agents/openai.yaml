@@ -1,0 +1,5 @@
+interface:
+  display_name: "Wait, what?"
+  short_description: "Lost the thread — a plain-language re-pitch of what's going on and where you got to"
+policy:
+  allow_implicit_invocation: false
