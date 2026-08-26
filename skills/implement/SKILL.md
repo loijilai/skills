@@ -10,7 +10,7 @@ Implement one piece of work, from a ticket, a spec, or what this conversation ha
 
 The source is one of: a **ticket**, a **spec**, or the **work settled in this conversation**. Any of the three is valid input.
 
-There is no fallback chain. Never guess, and never silently pick up unrelated work. Name the source you are about to implement, and unless it is unambiguous, confirm it before writing any code. It is unambiguous only when the user named it — an argument identifying a ticket or spec, or an explicit "implement what we just agreed". If the argument is vague, or nothing was named and the conversation has not settled on one piece of work, ask which source to use — offering the candidates: open tickets, an existing spec, or the conversation — and wait.
+Never guess and never pick up unrelated work. A named ticket or spec is a source; so is a go-ahead on what the conversation just settled ("implement that") — take it as long as it is clear which piece of work it refers to. Otherwise, ask which source to use and wait.
 
 When the source is a ticket or spec, the issue tracker should have been provided to you; if `docs/agents/issue-tracker.md` is missing, tell the user to run `/setup-skills`. Fetch the named ticket or spec and read its full body. Working from the conversation needs no tracker.
 
