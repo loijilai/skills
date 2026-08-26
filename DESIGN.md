@@ -22,6 +22,7 @@ You normally do not invoke these directly; the commands in the
 - **Scaffold lazily.** Create `CONTEXT.md`, `docs/adr/`, and `issues/` only when real work needs them.
 - **`issue-tracker.md` is the translation layer.** The skills only name operations — _publish a ticket_, _next unblocked ticket_, _mark done_. This file defines how those operations work in this repo, whether via local `issues/`, GitHub, GitLab, Jira, or another tracker.
 - **`domain.md` defines domain knowledge.** It points to the glossary and ADRs, says to use their vocabulary, flag ADR contradictions, and continue silently if they do not exist.
+- **Adapters are named at the point of use.** The skill that publishes a ticket names `docs/agents/issue-tracker.md` in its publish step; the one that explores names `docs/agents/domain.md` in its explore step. No skill guards its own preconditions at the top — `setup-skills` runs first, so the adapters are there.
 
 ## Caveats
 
@@ -37,16 +38,17 @@ requires:
 
 | You cannot                                           | Because                                                     |
 | ---------------------------------------------------- | ----------------------------------------------------------- |
-| skip [`/setup-skills`](skills/setup-skills/SKILL.md) | four skills stop and tell you to run it                     |
+| skip [`/setup-skills`](skills/setup-skills/SKILL.md) | the skills read `docs/agents/*.md` by path, and nothing else writes them |
 | renumber tickets freely                              | the numbering _is_ the dependency graph — blockers go first |
 
 Other things worth knowing:
 
-- **[`setup-skills`](skills/setup-skills/SKILL.md) appends a `## Language` block to `AGENTS.md`,** and nothing
-  else — that file is always in context, so no skill needs a pointer to it. Everything else the skills read is
+- **[`setup-skills`](skills/setup-skills/SKILL.md) appends a `## Language` block to `AGENTS.md`, and writes a
+  `CLAUDE.md` holding `@AGENTS.md`.** Claude Code reads `CLAUDE.md`, so that one-line import is what puts
+  `AGENTS.md` in context — which is why no skill needs a pointer to it. Everything else the skills read is
   `docs/agents/*.md`, by path.
 - **Re-running [`setup-skills`](skills/setup-skills/SKILL.md) replaces both adapters** with the seed versions.
-  An existing `## Language` block is left alone.
+  An existing `## Language` block and an existing `@AGENTS.md` import are left alone.
 - **[`implement`](skills/implement/SKILL.md) commits.** Default to current branch. Branch first if that matters.
 - **One ticket per fresh context window.** Tickets are sized for that.
 

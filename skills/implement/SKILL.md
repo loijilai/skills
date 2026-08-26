@@ -12,7 +12,7 @@ The source is one of: a **ticket**, a **spec**, or the **work settled in this co
 
 Never guess and never pick up unrelated work. A named ticket or spec is a source; so is a go-ahead on what the conversation just settled ("implement that") — take it as long as it is clear which piece of work it refers to. Otherwise, ask which source to use and wait.
 
-When the source is a ticket or spec, the issue tracker should have been provided to you; if `docs/agents/issue-tracker.md` is missing, tell the user to run `/setup-skills`. Fetch the named ticket or spec and read its full body. Working from the conversation needs no tracker.
+When the source is a ticket or spec, fetch it per `docs/agents/issue-tracker.md` and read its full body. Working from the conversation needs no tracker.
 
 ## Build
 

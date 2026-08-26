@@ -6,8 +6,6 @@ disable-model-invocation: true
 
 This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user — just synthesize what you already know.
 
-The issue tracker should have been provided to you. If `docs/agents/issue-tracker.md` is missing, tell the user to run `/setup-skills`.
-
 ## Process
 
 1. Explore the repo to understand the current state of the codebase, if you haven't already. Follow `docs/agents/domain.md` while exploring.
@@ -18,7 +16,7 @@ Check with the user that these seams match their expectations.
 
 3. Propose a `<feature-slug>` and confirm it with the user in one exchange. It becomes a directory name, so renaming it later moves every file.
 
-4. Write the spec using the template below, then publish it to the project issue tracker.
+4. Write the spec using the template below, then publish it per `docs/agents/issue-tracker.md`.
 
 Then tell the user where it landed, and that the next step is **`/to-tickets`** to break it into tickets.
 
