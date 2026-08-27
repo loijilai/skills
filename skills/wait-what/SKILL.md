@@ -6,6 +6,12 @@ disable-model-invocation: true
 
 Wait, I don't understand where you've got to here. Re-pitch that: give me a little bit of context.
 
+Three short parts:
+
+1. **Context** — the problem you are working on, in a sentence or two.
+2. **Where you got to** — the steps from that problem to your last message, and the decisions that carried you there.
+3. **Next action** — what the user now decides, checks, or waits for.
+
 Write it in the language the user is writing in — ASD-STE100 Simplified Technical English is English-only, so apply its spirit rather than its wordlist:
 
 - One main message per sentence. Split long sentences.
