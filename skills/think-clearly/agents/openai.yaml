@@ -1,0 +1,5 @@
+interface:
+  display_name: "Think Clearly"
+  short_description: "Audit a career discussion for thinking errors and hand back one move"
+policy:
+  allow_implicit_invocation: false
