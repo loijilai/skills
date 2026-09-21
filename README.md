@@ -49,7 +49,7 @@ other.
 | Command                                           | When                                                                                                                                                      |
 | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`/mentor`](skills/mentor/SKILL.md)               | Socratic mentoring while you build something yourself — a PR, commit, spec, ticket, or the conversation                                                   |
-| [`/debrief`](skills/debrief/SKILL.md)             | quizzed and traced through a feature the AI already built, until you can explain it yourself                                                              |
+| [`/trace-code`](skills/trace-code/SKILL.md)       | learning how to trace a change and test it by hand until you understand how the code behaves                                                              |
 | [`/explain`](skills/explain/SKILL.md)             | learning a concept from scratch — big picture, then intuition, then detail, until you can explain it in an interview                                      |
 | [`/to-article`](skills/to-article/SKILL.md)       | a discussion session or a rough draft ready to become a readable article                                                                                  |
 | [`/wait-what`](skills/wait-what/SKILL.md)         | lost the thread of what the agent is doing — a short, plain-language re-pitch of the context and where it got to                                          |

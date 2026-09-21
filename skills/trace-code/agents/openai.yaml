@@ -1,5 +1,5 @@
 interface:
-  display_name: "Debrief"
-  short_description: "Get quizzed on a feature the AI built until you can explain it yourself"
+  display_name: "Trace Code"
+  short_description: "Learn how to trace a change and manually test it to understand its behavior"
 policy:
   allow_implicit_invocation: false
