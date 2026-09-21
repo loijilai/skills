@@ -18,7 +18,7 @@ If the feature has no directory yet — the work came straight from conversation
 
 ### 2. Explore and Look for prefactors (optional)
 
-If you have not already explored the codebase, do so to understand the current state of the code. Follow `docs/agents/domain.md` while exploring.
+If you have not already explored the codebase, do so to understand the current state of the code.
 
 Look for opportunities to prefactor the code to make the implementation easier. "Make the change easy, then make the easy change."
 

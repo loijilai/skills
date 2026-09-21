@@ -7,13 +7,10 @@
   "skills": [
     "./skills/setup-skills",
     "./skills/grill",
-    "./skills/grilling",
-    "./skills/grill-to-docs",
     "./skills/to-spec",
     "./skills/to-tickets",
     "./skills/implement",
     "./skills/tdd",
-    "./skills/code-review",
-    "./skills/domain-modeling"
+    "./skills/code-review"
   ]
 }

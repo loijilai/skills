@@ -4,7 +4,7 @@ description: Turn a discussion session or a half-written draft into a clear, con
 disable-model-invocation: true
 ---
 
-An article is a prose document: default its language to the one the repo's `AGENTS.md` `## Language` section gives for prose — specs, tickets, `CONTEXT.md`, ADRs. That sets the prose language only; the terminology rules below are separate and apply whichever language you write in.
+An article is a prose document: default its language to the one the repo's `AGENTS.md` `## Language` section gives for prose — specs, tickets. That sets the prose language only; the terminology rules below are separate and apply whichever language you write in.
 
 ## Determine the source
 

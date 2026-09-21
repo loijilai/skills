@@ -1,6 +1,6 @@
 ---
 name: setup-skills
-description: Configure this repo for the engineering skills — issue tracker, domain doc, and language conventions, optionally committing the result. Run once, before the first use of the other skills.
+description: Configure this repo for the engineering skills — issue tracker and language conventions, optionally committing the result. Run once, before the first use of the other skills.
 disable-model-invocation: true
 ---
 
@@ -9,11 +9,10 @@ disable-model-invocation: true
 Write the per-repo configuration the other engineering skills read:
 
 - `docs/agents/issue-tracker.md` — where issues live, and the operations on them
-- `docs/agents/domain.md` — where `CONTEXT.md` and ADRs live, and how to consume them
 - `AGENTS.md` — the single source of agent instructions for this repo; carries which language each kind of output is written in. Appended, never overwritten.
 - `CLAUDE.md` — one line, `@AGENTS.md`, so Claude Code picks the above up
 
-All of it is copied from this skill's seed files, never regenerated from a description — the other skills treat these as a behavioural contract, and copying is what keeps the bytes identical across every repo. The two `docs/agents/` files go over verbatim; `language.md` is appended to `AGENTS.md` with one blank substituted from the user's answer; `CLAUDE.md` is a single import line. Step 3 is a script, so none of it depends on retyping.
+All of it is copied from this skill's seed files, never regenerated from a description — the other skills treat these as a behavioural contract, and copying is what keeps the bytes identical across every repo. The `docs/agents/` file goes over verbatim; `language.md` is appended to `AGENTS.md` with one blank substituted from the user's answer; `CLAUDE.md` is a single import line. Step 3 is a script, so none of it depends on retyping.
 
 Writing those files is the whole job. Git is separate — this may be someone else's repo, so ask before touching it.
 
@@ -21,17 +20,17 @@ Writing those files is the whole job. Git is separate — this may be someone el
 
 Whether `docs/agents/` already exists; whether `AGENTS.md` does and already carries a `## Language` section; whether `CLAUDE.md` does and, if so, whether it already imports `AGENTS.md`; plus `git rev-parse --git-dir`, `git log --oneline -1`, and `git status --short`.
 
-That is the whole exploration. This skill creates no `CONTEXT.md`, no `docs/adr/`, and no `issues/` — each appears when work actually produces it — so whether they exist changes nothing here.
+That is the whole exploration. This skill creates no `issues/` — it appears when work actually produces it — so whether it exists changes nothing here.
 
 ## 2. Present and confirm
 
 **`docs/agents/` exists** — the repo is already configured. List the files found, say that they are meant to be hand-edited and that a rerun replaces them with the seed versions, and ask whether to overwrite. Continue only on an explicit yes.
 
-**`docs/agents/` is absent** — show the user both files, path and full contents, and let them edit before anything lands.
+**`docs/agents/` is absent** — show the user the file, path and full contents, and let them edit before anything lands.
 
 Then, as separate questions — a yes to one is not a yes to another:
 
-- **prose language** — which language for specs, tickets, `CONTEXT.md`, ADRs? Default English. The answer fills the blank in step 3. A `## Language` section already in `AGENTS.md` is theirs: show it, skip the question, write nothing.
+- **prose language** — which language for specs and tickets? Default English. The answer fills the blank in step 3. A `## Language` section already in `AGENTS.md` is theirs: show it, skip the question, write nothing.
 
 Then the two git questions — ask them, and wait for the answer rather than assuming one either way:
 
@@ -47,7 +46,6 @@ Mechanical, from this skill's own folder. Run it — do not retype any of these 
 ```bash
 mkdir -p docs/agents
 cp issue-tracker.md docs/agents/issue-tracker.md
-cp domain.md docs/agents/domain.md
 
 # The one variable in this whole step: the prose language from step 2.
 # Not $LANG — that is a real environment variable.

@@ -9,20 +9,17 @@
 You normally do not invoke these directly; the commands in the
 [README quick start](README.md#quick-start) use them as needed.
 
-| Skill                                                | Called by                                                                            | Purpose                                                                                                       |
-| ---------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| [`grilling`](skills/grilling/SKILL.md)               | [`/grill`](skills/grill/SKILL.md), [`/grill-to-docs`](skills/grill-to-docs/SKILL.md) | Questions decisions in rounds until no important assumptions remain                                           |
-| [`domain-modeling`](skills/domain-modeling/SKILL.md) | [`/grill-to-docs`](skills/grill-to-docs/SKILL.md)                                    | Clarifies domain terms and records them in `CONTEXT.md`; records important trade-offs in `docs/adr/NNNN-*.md` |
-| [`tdd`](skills/tdd/SKILL.md)                         | [`/implement`](skills/implement/SKILL.md)                                            | Runs the red → green loop and keeps tests focused on stable public seams                                      |
-| [`code-review`](skills/code-review/SKILL.md)         | [`/implement`](skills/implement/SKILL.md)                                            | Reviews the change separately against repo standards and the ticket/spec                                      |
+| Skill                                        | Called by                                 | Purpose                                                                  |
+| -------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------ |
+| [`tdd`](skills/tdd/SKILL.md)                 | [`/implement`](skills/implement/SKILL.md) | Runs the red → green loop and keeps tests focused on stable public seams |
+| [`code-review`](skills/code-review/SKILL.md) | [`/implement`](skills/implement/SKILL.md) | Reviews the change separately against repo standards and the ticket/spec |
 
 ## Principles
 
 - **Progressive disclosure.** Keep detail in separate files behind pointers.
-- **Scaffold lazily.** Create `CONTEXT.md`, `docs/adr/`, and `issues/` only when real work needs them.
+- **Scaffold lazily.** Create `issues/` only when real work needs it.
 - **`issue-tracker.md` is the translation layer.** The skills only name operations — _publish a ticket_, _next unblocked ticket_, _mark done_. This file defines how those operations work in this repo, whether via local `issues/`, GitHub, GitLab, Jira, or another tracker.
-- **`domain.md` defines domain knowledge.** It points to the glossary and ADRs, says to use their vocabulary, flag ADR contradictions, and continue silently if they do not exist.
-- **Adapters are named at the point of use.** The skill that publishes a ticket names `docs/agents/issue-tracker.md` in its publish step; the one that explores names `docs/agents/domain.md` in its explore step. No skill guards its own preconditions at the top — `setup-skills` runs first, so the adapters are there.
+- **Adapters are named at the point of use.** The skill that publishes a ticket names `docs/agents/issue-tracker.md` in its publish step. No skill guards its own preconditions at the top — `setup-skills` runs first, so the adapters are there.
 
 ## Caveats
 
@@ -36,10 +33,10 @@ requires:
 | re-run [`/to-tickets`](skills/to-tickets/SKILL.md) on the same feature | it publishes alongside the tickets already there                                                           |
 | [`/implement`](skills/implement/SKILL.md) with no tickets              | a ticket, a spec, and the settled conversation are all valid sources; with no ticket it marks nothing done |
 
-| You cannot                                           | Because                                                     |
-| ---------------------------------------------------- | ----------------------------------------------------------- |
+| You cannot                                           | Because                                                                  |
+| ---------------------------------------------------- | ------------------------------------------------------------------------ |
 | skip [`/setup-skills`](skills/setup-skills/SKILL.md) | the skills read `docs/agents/*.md` by path, and nothing else writes them |
-| renumber tickets freely                              | the numbering _is_ the dependency graph — blockers go first |
+| renumber tickets freely                              | the numbering _is_ the dependency graph — blockers go first              |
 
 Other things worth knowing:
 

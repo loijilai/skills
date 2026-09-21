@@ -12,7 +12,7 @@ Derived from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT).
 npx skills add loijilai/skills
 ```
 
-**Select the "Loijilai Skills" group.** Its ten skills call each other, and a
+**Select the "Loijilai Skills" group.** Its seven skills call each other, and a
 missing one fails quietly.
 Pick other up only if you want them.
 
@@ -25,21 +25,20 @@ These are the commands you type.
 ```mermaid
 flowchart LR
     S["/setup-skills"] -. "once per repo" .-> G
-    G["/grill<br/>/grill-to-docs"] --> TS["/to-spec"]
+    G["/grill"] --> TS["/to-spec"]
     TS --> TT["/to-tickets"]
     TT --> IM["/implement"]
     G -. "small work" .-> IM
     IM -. "next ticket,<br/>fresh context" .-> IM
 ```
 
-| Command                                           | When                                                        | What it writes                                                                                                                                               |
-| ------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [`/setup-skills`](skills/setup-skills/SKILL.md)   | once per repo, before anything else                         | `docs/agents/issue-tracker.md`, `docs/agents/domain.md`, a `## Language` block in `AGENTS.md`, and a `CLAUDE.md` that imports it; commits only if you say so |
-| [`/grill`](skills/grill/SKILL.md)                 | stateless discussion                                        | -                                                                                                                                                            |
-| [`/grill-to-docs`](skills/grill-to-docs/SKILL.md) | stateful discussion kept in repo                            | `CONTEXT.md`, `docs/adr/NNNN-*.md`, lazily                                                                                                                   |
-| [`/to-spec`](skills/to-spec/SKILL.md)             | after /grill\*                                              | `issues/<feature>/spec.md`                                                                                                                                   |
-| [`/to-tickets`](skills/to-tickets/SKILL.md)       | after /to-spec                                              | `issues/<feature>/NN-<slug>.md`                                                                                                                              |
-| [`/implement`](skills/implement/SKILL.md)         | after /to-tickets, or on a spec or the settled conversation | source, tests, completed criteria, `Status: done`, a commit                                                                                                  |
+| Command                                         | When                                                        | What it writes                                                                                                                      |
+| ----------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| [`/setup-skills`](skills/setup-skills/SKILL.md) | once per repo, before anything else                         | `docs/agents/issue-tracker.md`, a `## Language` block in `AGENTS.md`, and a `CLAUDE.md` that imports it; commits only if you say so |
+| [`/grill`](skills/grill/SKILL.md)               | stress-test a plan or design                                | -                                                                                                                                   |
+| [`/to-spec`](skills/to-spec/SKILL.md)           | after /grill                                                | `issues/<feature>/spec.md`                                                                                                          |
+| [`/to-tickets`](skills/to-tickets/SKILL.md)     | after /to-spec                                              | `issues/<feature>/NN-<slug>.md`                                                                                                     |
+| [`/implement`](skills/implement/SKILL.md)       | after /to-tickets, or on a spec or the settled conversation | source, tests, completed criteria, `Status: done`, a commit                                                                         |
 
 ## Outside the pipeline
 

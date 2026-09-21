@@ -23,5 +23,3 @@ Write it in the language the user is writing in — ASD-STE100 Simplified Techni
 - Cut hedges and padding. Keep real limits, risks, and uncertainty.
 - Short sentences and common words, but never at the cost of precision.
 - Consistent punctuation, spacing, and number formats throughout.
-
-Use the ubiquitous language from `CONTEXT.md` for domain terms.
