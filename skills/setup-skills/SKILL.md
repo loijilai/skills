@@ -1,6 +1,6 @@
 ---
 name: setup-skills
-description: Configure this repo for the engineering skills — issue tracker and language conventions, optionally committing the result. Run once, before the first use of the other skills.
+description: Configure this repo for the engineering skills — issue tracker, language and coding conventions, optionally committing the result. Run once, before the first use of the other skills.
 disable-model-invocation: true
 ---
 
@@ -11,14 +11,15 @@ Write the per-repo configuration the other engineering skills read:
 - `docs/agents/issue-tracker.md` — where issues live, and the operations on them
 - `AGENTS.md` — the single source of agent instructions for this repo; carries which language each kind of output is written in. Appended, never overwritten.
 - `CLAUDE.md` — one line, `@AGENTS.md`, so Claude Code picks the above up
+- `CODING_CONVENTION.md` — how code is written here, starting with when to comment; what `/code-review` checks against. Written only if absent.
 
-All of it is copied from this skill's seed files, never regenerated from a description — the other skills treat these as a behavioural contract, and copying is what keeps the bytes identical across every repo. The `docs/agents/` file goes over verbatim; `language.md` is appended to `AGENTS.md` with one blank substituted from the user's answer; `CLAUDE.md` is a single import line. Step 3 is a script, so none of it depends on retyping.
+All of it is copied from this skill's seed files, never regenerated from a description — the other skills treat these as a behavioural contract, and copying is what keeps the bytes identical across every repo. The `docs/agents/` file goes over verbatim; `language.md` is appended to `AGENTS.md` with one blank substituted from the user's answer; `CLAUDE.md` is a single import line; `CODING_CONVENTION.md` goes over verbatim. Step 3 is a script, so none of it depends on retyping.
 
 Writing those files is the whole job. Git is separate — this may be someone else's repo, so ask before touching it.
 
 ## 1. Explore
 
-Whether `docs/agents/` already exists; whether `AGENTS.md` does and already carries a `## Language` section; whether `CLAUDE.md` does and, if so, whether it already imports `AGENTS.md`; plus `git rev-parse --git-dir`, `git log --oneline -1`, and `git status --short`.
+Whether `docs/agents/` already exists; whether `AGENTS.md` does and already carries a `## Language` section; whether `CLAUDE.md` does and, if so, whether it already imports `AGENTS.md`; whether `CODING_CONVENTION.md` exists; plus `git rev-parse --git-dir`, `git log --oneline -1`, and `git status --short`.
 
 That is the whole exploration. This skill creates no `issues/` — it appears when work actually produces it — so whether it exists changes nothing here.
 
@@ -27,6 +28,8 @@ That is the whole exploration. This skill creates no `issues/` — it appears wh
 **`docs/agents/` exists** — the repo is already configured. List the files found, say that they are meant to be hand-edited and that a rerun replaces them with the seed versions, and ask whether to overwrite. Continue only on an explicit yes.
 
 **`docs/agents/` is absent** — show the user the file, path and full contents, and let them edit before anything lands.
+
+**`CODING_CONVENTION.md` exists** — it is theirs; say it is left as is. **Absent** — show its full contents alongside the above, open to the same edits.
 
 Then, as separate questions — a yes to one is not a yes to another:
 
@@ -60,6 +63,8 @@ if ! grep -q '^## Language$' AGENTS.md 2>/dev/null; then
   sed "s/<language>/$PROSE_LANG/g" language.md >> AGENTS.md
 fi
 
+[ -e CODING_CONVENTION.md ] || cp coding-convention.md CODING_CONVENTION.md
+
 if [ ! -e CLAUDE.md ]; then
   printf '@AGENTS.md\n' > CLAUDE.md
 elif ! grep -q '^@AGENTS\.md$' CLAUDE.md; then
@@ -71,7 +76,7 @@ Apply the user's step-2 edits, if any, to the copies afterwards — never to the
 
 Why it is a script and not prose to follow: the other skills read `AGENTS.md` and `docs/agents/*` as a behavioural contract, so the bytes have to be the same in every repo. Retyping five lines by hand drifts.
 
-Both halves are guarded, so a second run adds nothing: an existing `## Language` section and an existing `@AGENTS.md` import are left exactly as they are.
+Everything outside `docs/agents/` is guarded, so a second run adds nothing: an existing `## Language` section, `@AGENTS.md` import and `CODING_CONVENTION.md` are left exactly as they are.
 
 `AGENTS.md` is appended to, never overwritten — the rest of the file is not yours. It is also the single source: the block goes there even when the repo already keeps its agent instructions in `CLAUDE.md`. `CLAUDE.md` only ever gains one import line, at the top, with every other byte untouched.
 

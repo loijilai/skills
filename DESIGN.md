@@ -45,7 +45,7 @@ Other things worth knowing:
   `AGENTS.md` in context — which is why no skill needs a pointer to it. Everything else the skills read is
   `docs/agents/*.md`, by path.
 - **Re-running [`setup-skills`](skills/setup-skills/SKILL.md) replaces both adapters** with the seed versions.
-  An existing `## Language` block and an existing `@AGENTS.md` import are left alone.
+  An existing `## Language` block, `@AGENTS.md` import and `CODING_CONVENTION.md` are left alone.
 - **[`implement`](skills/implement/SKILL.md) commits.** Default to current branch. Branch first if that matters.
 - **One ticket per fresh context window.** Tickets are sized for that.
 
@@ -54,7 +54,7 @@ Other things worth knowing:
 - **Different issue tracker** → rewrite `docs/agents/issue-tracker.md`.
 - **Different test conventions** → [`tdd/tests.md`](skills/tdd/tests.md) and [`tdd/mocking.md`](skills/tdd/mocking.md) are
   examples, not rules. Replace them with your language's.
-- **Different review standards** → drop a `CODING_STANDARDS.md` in your repo.
+- **Different review standards** → edit the `CODING_CONVENTION.md` that `setup-skills` wrote.
   [`code-review`](skills/code-review/SKILL.md) finds it and lets it override the
   built-in smell baseline. There is nothing to configure.
 - **Adding a skill** → if another skill needs to call it, leave

@@ -34,7 +34,7 @@ flowchart LR
 
 | Command                                         | When                                                        | What it writes                                                                                                                      |
 | ----------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| [`/setup-skills`](skills/setup-skills/SKILL.md) | once per repo, before anything else                         | `docs/agents/issue-tracker.md`, a `## Language` block in `AGENTS.md`, and a `CLAUDE.md` that imports it; commits only if you say so |
+| [`/setup-skills`](skills/setup-skills/SKILL.md) | once per repo, before anything else                         | `docs/agents/issue-tracker.md`, a `## Language` block in `AGENTS.md`, a `CLAUDE.md` that imports it, and `CODING_CONVENTION.md`; commits only if you say so |
 | [`/grill`](skills/grill/SKILL.md)               | stress-test a plan or design                                | -                                                                                                                                   |
 | [`/to-spec`](skills/to-spec/SKILL.md)           | after /grill                                                | `issues/<feature>/spec.md`                                                                                                          |
 | [`/to-tickets`](skills/to-tickets/SKILL.md)     | after /to-spec                                              | `issues/<feature>/NN-<slug>.md`                                                                                                     |
