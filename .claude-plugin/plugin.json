@@ -6,7 +6,7 @@
   "license": "MIT",
   "skills": [
     "./skills/setup-skills",
-    "./skills/grill",
+    "./skills/grill-me",
     "./skills/to-spec",
     "./skills/to-tickets",
     "./skills/implement",
