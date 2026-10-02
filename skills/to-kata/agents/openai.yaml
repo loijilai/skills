@@ -1,0 +1,5 @@
+interface:
+  display_name: "To Kata"
+  short_description: "Extract a self-contained code kata PRD from the codebase"
+policy:
+  allow_implicit_invocation: false

@@ -9,6 +9,18 @@
       "source": "./",
       "description": "Turn a dictated summary into a sectioned, fact-checked draft for a script or article.",
       "skills": ["./skills/brain-dump"]
+    },
+    {
+      "name": "learning",
+      "source": "./",
+      "description": "Learn a concept or a piece of code by working it out yourself.",
+      "skills": ["./skills/trace-code", "./skills/teach-me", "./skills/to-kata"]
+    },
+    {
+      "name": "productivity",
+      "source": "./",
+      "description": "Standalone helpers for keeping up with the agent and writing up a session.",
+      "skills": ["./skills/wait-what", "./skills/to-article"]
     }
   ]
 }

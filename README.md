@@ -40,26 +40,35 @@ flowchart LR
 | [`/to-tickets`](skills/to-tickets/SKILL.md)     | after /to-spec                                              | `issues/<feature>/NN-<slug>.md`                                                                                                                             |
 | [`/implement`](skills/implement/SKILL.md)       | after /to-tickets, or on a spec or the settled conversation | source, tests, completed criteria, `Status: done`, a commit                                                                                                 |
 
-## Outside the pipeline
-
-Standalone commands. Use any time, independent of the flow above and of each
-other.
-
-| Command                                           | When                                                                                                                                                      |
-| ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`/trace-code`](skills/trace-code/SKILL.md)       | learning how to trace a change and test it by hand until you understand how the code behaves                                                              |
-| [`/wait-what`](skills/wait-what/SKILL.md)         | lost the thread of what the agent is doing — a short, plain-language re-pitch of the context and where it got to                                          |
-| [`/teach-me`](skills/teach-me/SKILL.md)           | retrieval practice on a concept — guided one step at a time, no answers handed over, until you can recall it whole                                        |
-| [`/to-article`](skills/to-article/SKILL.md)       | a discussion session or a rough draft ready to become a readable article                                                                                  |
-
 ## Brain dump
 
 For turning what you dictate after reading or thinking into material for
 scripts and articles. Select the "Brain Dump" group.
 
-| Command                                     | When                                                                                                                   |
-| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Command                                     | When                                                                                                                      |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | [`/brain-dump`](skills/brain-dump/SKILL.md) | a dictated summary transcript to clean up, split into sections, and fact-check before you revise it into a script or post |
+
+## Learning
+
+For understanding something by working it out yourself. Select the "Learning"
+group.
+
+| Command                                     | When                                                                                                                         |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| [`/trace-code`](skills/trace-code/SKILL.md) | learning how to trace a change and test it by hand until you understand how the code behaves                                 |
+| [`/teach-me`](skills/teach-me/SKILL.md)     | retrieval practice on a concept — guided one step at a time, no answers handed over, until you can recall it whole           |
+| [`/to-kata`](skills/to-kata/SKILL.md)       | learning from a codebase by rebuilding part of it — a self-contained practice PRD to implement, then compare to the original |
+
+## Productivity
+
+Standalone commands. Use any time, independent of the flow above and of each
+other. Select the "Productivity" group.
+
+| Command                                     | When                                                                                                             |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| [`/wait-what`](skills/wait-what/SKILL.md)   | lost the thread of what the agent is doing — a short, plain-language re-pitch of the context and where it got to |
+| [`/to-article`](skills/to-article/SKILL.md) | a discussion session or a rough draft ready to become a readable article                                         |
 
 ## Design
 
