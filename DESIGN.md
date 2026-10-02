@@ -18,7 +18,8 @@ You normally do not invoke these directly; the commands in the
 
 - **Progressive disclosure.** Keep detail in separate files behind pointers.
 - **Scaffold lazily.** Create `issues/` only when real work needs it.
-- **`issue-tracker.md` is the translation layer.** The skills only name operations — _publish a ticket_, _next unblocked ticket_, _mark done_. This file defines how those operations work in this repo, whether via local `issues/`, GitHub, GitLab, Jira, or another tracker.
+- **`issue-tracker.md` is the translation layer.** The skills only name operations — _publish a spec_, _publish a ticket_, _fetch a spec or a ticket_. This file defines how those three work in this repo, whether via local `issues/`, GitHub, GitLab, Jira, or another tracker. `setup-skills` ships a seed for local markdown and one for GitHub; anything else is a rewrite of that one file.
+- **Three operations, all of them writes-once or reads.** No skill records progress on a ticket, closes one, or asks the tracker what to do next. An operation nothing calls is one more thing to translate per tracker, and a status field nothing writes rots: `Status: open` stops telling you whether the work was done or the field was forgotten. Done-ness is the code, the commit, and — on a tracker that has state — whichever issues you closed yourself.
 - **Adapters are named at the point of use.** The skill that publishes a ticket names `docs/agents/issue-tracker.md` in its publish step. No skill guards its own preconditions at the top — `setup-skills` runs first, so the adapters are there.
 
 ## Caveats
@@ -26,17 +27,18 @@ You normally do not invoke these directly; the commands in the
 **The order in the [README quick start](README.md#quick-start) is the happy path, not a rule.** What each command actually
 requires:
 
-| You can                                                                | Because                                                                                                    |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| skip [`/to-spec`](skills/to-spec/SKILL.md)                             | [`/to-tickets`](skills/to-tickets/SKILL.md) reads the conversation and proposes the slug itself            |
-| run [`/code-review`](skills/code-review/SKILL.md) any time             | if no ticket, standards review only                                                                        |
-| re-run [`/to-tickets`](skills/to-tickets/SKILL.md) on the same feature | it publishes alongside the tickets already there                                                           |
-| [`/implement`](skills/implement/SKILL.md) with no tickets              | a ticket, a spec, and the settled conversation are all valid sources; with no ticket it marks nothing done |
+| You can                                                                | Because                                                                                         |
+| ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| skip [`/to-spec`](skills/to-spec/SKILL.md)                             | [`/to-tickets`](skills/to-tickets/SKILL.md) reads the conversation and proposes the slug itself |
+| run [`/code-review`](skills/code-review/SKILL.md) any time             | if no ticket, standards review only                                                             |
+| re-run [`/to-tickets`](skills/to-tickets/SKILL.md) on the same feature | it publishes alongside the tickets already there                                                |
+| [`/implement`](skills/implement/SKILL.md) with no tickets              | a ticket, a spec, and the settled conversation are all valid sources                            |
+| renumber or retitle tickets freely                                     | the dependency graph lives in each ticket's "Blocked by", not in its identifier                 |
 
 | You cannot                                           | Because                                                                  |
 | ---------------------------------------------------- | ------------------------------------------------------------------------ |
 | skip [`/setup-skills`](skills/setup-skills/SKILL.md) | the skills read `docs/agents/*.md` by path, and nothing else writes them |
-| renumber tickets freely                              | the numbering _is_ the dependency graph — blockers go first              |
+| switch tracker without rerunning it                  | the seed is copied, not generated; and nothing migrates published issues |
 
 Other things worth knowing:
 
@@ -44,14 +46,25 @@ Other things worth knowing:
   `CLAUDE.md` holding `@AGENTS.md`.** Claude Code reads `CLAUDE.md`, so that one-line import is what puts
   `AGENTS.md` in context — which is why no skill needs a pointer to it. Everything else the skills read is
   `docs/agents/*.md`, by path.
-- **Re-running [`setup-skills`](skills/setup-skills/SKILL.md) replaces both adapters** with the seed versions.
-  An existing `## Language` block, `@AGENTS.md` import and `CODING_CONVENTION.md` are left alone.
+- **Re-running [`setup-skills`](skills/setup-skills/SKILL.md) replaces the adapter** with the seed version for
+  whichever tracker you pick. An existing `## Language` block, `@AGENTS.md` import and `CODING_CONVENTION.md`
+  are left alone.
+- **The tracker is asked for, never inferred.** A GitHub remote is not an answer, so `setup-skills` puts local
+  and github to you and waits. Pick github and it checks `gh` is installed, logged in and pointed at this repo
+  before it writes anything — an unusable tracker would otherwise surface at the first `/to-spec`.
+- **Only GitHub has state.** Local `issues/` is a pile of files written once; open and closed exist only on
+  GitHub, and only because you close the issues yourself.
 - **[`implement`](skills/implement/SKILL.md) commits.** Default to current branch. Branch first if that matters.
 - **One ticket per fresh context window.** Tickets are sized for that.
 
 ## Making it yours
 
-- **Different issue tracker** → rewrite `docs/agents/issue-tracker.md`.
+- **Local markdown or GitHub Issues** → answer the tracker question in
+  [`/setup-skills`](skills/setup-skills/SKILL.md); it copies the matching seed
+  ([local](skills/setup-skills/issue-tracker-local.md),
+  [github](skills/setup-skills/issue-tracker-github.md)) to `docs/agents/issue-tracker.md`.
+- **Any other tracker** → rewrite `docs/agents/issue-tracker.md`, defining the three operations the seeds
+  define. That one file is the whole of it; no skill names a tracker.
 - **Different test conventions** → [`tdd/tests.md`](skills/tdd/tests.md) and [`tdd/mocking.md`](skills/tdd/mocking.md) are
   examples, not rules. Replace them with your language's.
 - **Different review standards** → edit the `CODING_CONVENTION.md` that `setup-skills` wrote.

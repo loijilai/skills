@@ -14,7 +14,7 @@ This skill takes the current conversation context and codebase understanding and
 
 Check with the user that these seams match their expectations.
 
-3. Propose a `<feature-slug>` and confirm it with the user in one exchange. It becomes a directory name, so renaming it later moves every file.
+3. Propose a `<feature-slug>` and confirm it with the user in one exchange. It is how every ticket of this feature will be found later — a directory name, a label, whatever the tracker uses — so renaming it afterwards means touching all of them.
 
 4. Write the spec using the template below, then publish it per `docs/agents/issue-tracker.md`.
 

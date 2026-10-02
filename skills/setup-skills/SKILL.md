@@ -8,12 +8,12 @@ disable-model-invocation: true
 
 Write the per-repo configuration the other engineering skills read:
 
-- `docs/agents/issue-tracker.md` — where issues live, and the operations on them
+- `docs/agents/issue-tracker.md` — where issues live, and the operations on them; copied from the seed for the tracker the user picks, local markdown or GitHub
 - `AGENTS.md` — the single source of agent instructions for this repo; carries which language each kind of output is written in. Appended, never overwritten.
 - `CLAUDE.md` — one line, `@AGENTS.md`, so Claude Code picks the above up
 - `CODING_CONVENTION.md` — how code is written here, starting with when to comment; what `/code-review` checks against. Written only if absent.
 
-All of it is copied from this skill's seed files, never regenerated from a description — the other skills treat these as a behavioural contract, and copying is what keeps the bytes identical across every repo. The `docs/agents/` file goes over verbatim; `language.md` is appended to `AGENTS.md` with one blank substituted from the user's answer; `CLAUDE.md` is a single import line; `CODING_CONVENTION.md` goes over verbatim. Step 3 is a script, so none of it depends on retyping.
+All of it is copied from this skill's seed files, never regenerated from a description — the other skills treat these as a behavioural contract, and copying is what keeps the bytes identical across every repo. The chosen `issue-tracker-*.md` seed goes over verbatim as `docs/agents/issue-tracker.md`; `language.md` is appended to `AGENTS.md` with one blank substituted from the user's answer; `CLAUDE.md` is a single import line; `CODING_CONVENTION.md` goes over verbatim. Step 3 is a script, so none of it depends on retyping.
 
 Writing those files is the whole job. Git is separate — this may be someone else's repo, so ask before touching it.
 
@@ -21,13 +21,19 @@ Writing those files is the whole job. Git is separate — this may be someone el
 
 Whether `docs/agents/` already exists; whether `AGENTS.md` does and already carries a `## Language` section; whether `CLAUDE.md` does and, if so, whether it already imports `AGENTS.md`; whether `CODING_CONVENTION.md` exists; plus `git rev-parse --git-dir`, `git log --oneline -1`, and `git status --short`.
 
-That is the whole exploration. This skill creates no `issues/` — it appears when work actually produces it — so whether it exists changes nothing here.
+That is the whole exploration. This skill creates no `issues/` — it appears when work actually produces it — so whether it exists changes nothing here. Nor does `git remote`: the tracker is asked for in step 2, never inferred.
 
 ## 2. Present and confirm
 
 **`docs/agents/` exists** — the repo is already configured. List the files found, say that they are meant to be hand-edited and that a rerun replaces them with the seed versions, and ask whether to overwrite. Continue only on an explicit yes.
 
-**`docs/agents/` is absent** — show the user the file, path and full contents, and let them edit before anything lands.
+Ask for the tracker first, since it decides which seed the user is shown:
+
+- **issue tracker** — **local** (markdown files under `issues/`, committed with the code) or **github** (this repo's GitHub Issues, through the `gh` CLI)? Default local. Put both to the user and wait; do not read `git remote` and guess for them.
+
+On **github**, check `gh auth status` and `gh repo view` before anything else. If either fails, **stop and write nothing** — name what failed and what fixes it (install `gh`, `gh auth login`, or point `origin` at a GitHub repo), and say they can rerun once it works, or answer local instead. A tracker written into `docs/agents/` but unusable fails later, at the first `/to-spec`, far from its cause.
+
+**`docs/agents/` is absent** — show the user the file, path and full contents of the seed for the tracker they picked, and let them edit before anything lands.
 
 **`CODING_CONVENTION.md` exists** — it is theirs; say it is left as is. **Absent** — show its full contents alongside the above, open to the same edits.
 
@@ -47,12 +53,12 @@ Writing the files does not wait on these; step 4 does.
 Mechanical, from this skill's own folder. Run it — do not retype any of these bytes from the descriptions above.
 
 ```bash
-mkdir -p docs/agents
-cp issue-tracker.md docs/agents/issue-tracker.md
+# The two variables in this whole step, both answered in step 2.
+TRACKER='local'        # 'local' or 'github'
+PROSE_LANG='English'   # not $LANG — that is a real environment variable
 
-# The one variable in this whole step: the prose language from step 2.
-# Not $LANG — that is a real environment variable.
-PROSE_LANG='English'
+mkdir -p docs/agents
+cp "issue-tracker-$TRACKER.md" docs/agents/issue-tracker.md
 
 if ! grep -q '^## Language$' AGENTS.md 2>/dev/null; then
   if [ -s AGENTS.md ]; then
@@ -88,11 +94,11 @@ That last case — a `CLAUDE.md` that already had content — leaves the repo wi
 
 Message, under this repo's `<type>: <message>` convention. `chore:` for both: agent configuration is neither a user-facing feature nor human documentation.
 
-| Case                          | Message                                              |
-| ----------------------------- | ---------------------------------------------------- |
+| Case                          | Message                                               |
+| ----------------------------- | ----------------------------------------------------- |
 | repo you just `git init`ed    | `chore: initial commit with engineering skills setup` |
 | repo that already had commits | `chore: configure engineering skills`                 |
 
 ## 5. Report
 
-Which files now exist or changed, and that all are theirs to edit directly — rerunning this skill is for starting over, not for tweaking. If `CLAUDE.md` kept content of its own, name it as a second source of instruction and suggest folding it into `AGENTS.md`. Then the git outcome: which commit on which branch, or that the files are written but uncommitted and left for them to stage.
+Which files now exist or changed, and that all are theirs to edit directly — rerunning this skill is for starting over, not for tweaking. Name which tracker is now configured, and that switching tracker means rerunning this skill: nothing migrates issues already published to the old one. If `CLAUDE.md` kept content of its own, name it as a second source of instruction and suggest folding it into `AGENTS.md`. Then the git outcome: which commit on which branch, or that the files are written but uncommitted and left for them to stage.

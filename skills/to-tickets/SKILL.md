@@ -14,7 +14,7 @@ Break a plan, spec, or conversation into a set of **tickets** — tracer-bullet 
 
 Work from whatever is already in the conversation context. If the user passes a reference (a spec path, a feature slug) as an argument, fetch it and read its full body.
 
-If the feature has no directory yet — the work came straight from conversation, with no spec — propose a `<feature-slug>` and confirm it with the user in one exchange, as `to-spec` would.
+If the feature has no slug yet — the work came straight from conversation, with no spec — propose a `<feature-slug>` and confirm it with the user in one exchange, as `to-spec` would.
 
 ### 2. Explore and Look for prefactors (optional)
 
@@ -57,19 +57,17 @@ Iterate until the user approves the breakdown.
 
 ### 5. Publish the tickets to the configured tracker
 
-Publish the approved tickets per `docs/agents/issue-tracker.md`, in dependency order (blockers first) so each ticket's blocking edges reference tickets that already exist. Use the ticket template below.
+Publish the approved tickets per `docs/agents/issue-tracker.md`, in dependency order (blockers first) so each ticket's blocking edges reference tickets that already exist. Use the ticket template below. How a ticket is identified, and anything it carries beyond the template, is that file's business.
 
-Work the **frontier**: any ticket whose blockers are all done. For a purely linear chain that means top to bottom.
-
-Then tell the user the tickets are ready, and that the next step is **`/implement`** — one ticket per fresh context window, since each slice is self-contained.
+Then tell the user where the tickets landed, and that the next step is **`/implement`** — one ticket per fresh context window, since each slice is self-contained. Order the work by the blocking edges: a ticket can start once every ticket it is blocked by is done. For a purely linear chain that means top to bottom.
 
 <ticket-template>
 
-# <NN> — <Ticket title>
+# <Ticket title>
 
 **What to build:** the end-to-end behaviour this ticket makes work, from the user's perspective — not a layer-by-layer implementation list.
 
-**Blocked by:** the numbers/titles of the tickets that gate this one, or "None — can start immediately".
+**Blocked by:** the tickets that gate this one, or "None — can start immediately". These edges are the only record of the dependencies; an identifier the tracker happens to assign in order is not one.
 
 - [ ] Acceptance criterion 1
 - [ ] Acceptance criterion 2

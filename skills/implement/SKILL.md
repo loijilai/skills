@@ -20,10 +20,10 @@ Use /tdd where possible, at pre-agreed seams.
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end.
 
-Tick each acceptance criterion as it goes green, if the source has any.
+Work through the acceptance criteria in order, if the source has any, and say which ones are green as you report back.
 
 Once done, use /code-review to review the work.
 
-Mark the ticket done — only if the source was a ticket.
-
 Commit your work to the current branch.
+
+Leave the ticket itself untouched. Nothing here edits it or closes it — the code and the commit are the record, and whether the ticket is done is the user's call to make in their tracker.
