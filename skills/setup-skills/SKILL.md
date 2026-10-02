@@ -25,13 +25,15 @@ That is the whole exploration. This skill creates no `issues/` — it appears wh
 
 ## 2. Present and confirm
 
-**`docs/agents/` exists** — the repo is already configured. List the files found, say that they are meant to be hand-edited and that a rerun replaces them with the seed versions, and ask whether to overwrite. Continue only on an explicit yes.
-
-Ask for the tracker first, since it decides which seed the user is shown:
+The tracker comes first, since it decides which seed the user is shown:
 
 - **issue tracker** — **local** (markdown files under `issues/`, committed with the code) or **github** (this repo's GitHub Issues, through the `gh` CLI)? Default local. Put both to the user and wait; do not read `git remote` and guess for them.
 
 On **github**, check `gh auth status` and `gh repo view` before anything else. If either fails, **stop and write nothing** — name what failed and what fixes it (install `gh`, `gh auth login`, or point `origin` at a GitHub repo), and say they can rerun once it works, or answer local instead. A tracker written into `docs/agents/` but unusable fails later, at the first `/to-spec`, far from its cause.
+
+**`docs/agents/` exists** — the repo is already configured. List the files found, say that they are meant to be hand-edited and that a rerun replaces them with the seed versions, and ask whether to overwrite. Continue only on an explicit yes.
+
+If that rerun is also a change of tracker, say plainly what it does and does not do before they answer: the new seed lands, and **nothing moves**. Specs and tickets already published to the old tracker stay where they are, and no skill will look for them there again. Moving the ones still open is theirs to do, by hand or by asking for it as a separate job.
 
 **`docs/agents/` is absent** — show the user the file, path and full contents of the seed for the tracker they picked, and let them edit before anything lands.
 
