@@ -49,10 +49,8 @@ other.
 | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`/trace-code`](skills/trace-code/SKILL.md)       | learning how to trace a change and test it by hand until you understand how the code behaves                                                              |
 | [`/wait-what`](skills/wait-what/SKILL.md)         | lost the thread of what the agent is doing — a short, plain-language re-pitch of the context and where it got to                                          |
-| [`/mentor`](skills/mentor/SKILL.md)               | Socratic mentoring while you build something yourself — a PR, commit, spec, ticket, or the conversation                                                   |
 | [`/teach-me`](skills/teach-me/SKILL.md)           | retrieval practice on a concept — guided one step at a time, no answers handed over, until you can recall it whole                                        |
 | [`/to-article`](skills/to-article/SKILL.md)       | a discussion session or a rough draft ready to become a readable article                                                                                  |
-| [`/think-clearly`](skills/think-clearly/SKILL.md) | planning a career in the conversation and the thinking has gone crooked — an audit of what you asserted, the errors in it, and one move to make this week |
 
 ## Design
 
