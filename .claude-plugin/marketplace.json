@@ -1,0 +1,14 @@
+{
+  "name": "loijilai-skills",
+  "owner": {
+    "name": "loijilai"
+  },
+  "plugins": [
+    {
+      "name": "brain-dump",
+      "source": "./",
+      "description": "Turn a dictated summary into a sectioned, fact-checked draft for a script or article.",
+      "skills": ["./skills/brain-dump"]
+    }
+  ]
+}

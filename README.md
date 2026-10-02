@@ -52,6 +52,15 @@ other.
 | [`/teach-me`](skills/teach-me/SKILL.md)           | retrieval practice on a concept — guided one step at a time, no answers handed over, until you can recall it whole                                        |
 | [`/to-article`](skills/to-article/SKILL.md)       | a discussion session or a rough draft ready to become a readable article                                                                                  |
 
+## Brain dump
+
+For turning what you dictate after reading or thinking into material for
+scripts and articles. Select the "Brain Dump" group.
+
+| Command                                     | When                                                                                                                   |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| [`/brain-dump`](skills/brain-dump/SKILL.md) | a dictated summary transcript to clean up, split into sections, and fact-check before you revise it into a script or post |
+
 ## Design
 
 See [DESIGN.md](DESIGN.md) for the dependency diagram, the skills called
