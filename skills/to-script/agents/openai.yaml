@@ -1,0 +1,5 @@
+interface:
+  display_name: "To Script"
+  short_description: "Review a video script for audience transformation and output script.md"
+policy:
+  allow_implicit_invocation: false

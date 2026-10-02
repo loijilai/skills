@@ -48,6 +48,7 @@ scripts and articles. Select the "Brain Dump" group.
 | Command                                     | When                                                                                                                      |
 | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | [`/brain-dump`](skills/brain-dump/SKILL.md) | a dictated summary transcript to clean up, split into sections, and fact-check before you revise it into a script or post |
+| [`/to-script`](skills/to-script/SKILL.md)   | a draft video script to review for what it changes in the audience, then cut and reorder into `script.md`                 |
 
 ## Learning
 

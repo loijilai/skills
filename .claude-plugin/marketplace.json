@@ -8,7 +8,7 @@
       "name": "brain-dump",
       "source": "./",
       "description": "Turn a dictated summary into a sectioned, fact-checked draft for a script or article.",
-      "skills": ["./skills/brain-dump"]
+      "skills": ["./skills/brain-dump", "./skills/to-script"]
     },
     {
       "name": "learning",
