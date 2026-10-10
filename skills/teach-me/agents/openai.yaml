@@ -1,5 +1,5 @@
 interface:
   display_name: "Teach Me"
-  short_description: "Learn a concept by retrieval practice, one guided step at a time"
+  short_description: "Learn just the core of a concept, one step at a time, enough to answer it in an interview"
 policy:
   allow_implicit_invocation: false

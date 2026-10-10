@@ -1,10 +1,8 @@
 ---
 name: teach-me
-description: Guide the user through a concept by retrieval practice — never hand over the answer, confirm each idea is clear before moving on.
+description: Teach the user only the minimum core of a concept, one step at a time, enough to answer it in an interview.
 argument-hint: <topic>
 disable-model-invocation: true
 ---
 
-I'm doing retrieval practice to learn a concept. Don't give me the answer directly — guide me one step at a time, and confirm I've got the idea clear before moving on.
-
-I want to learn: $ARGUMENTS
+Teach me $ARGUMENTS, one step at a time. Move on only after I say I've got it. Teach only the minimum core knowledge I need to answer it in an interview.

@@ -58,7 +58,8 @@ group.
 | Command                                     | When                                                                                                                         |
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | [`/trace-code`](skills/trace-code/SKILL.md) | learning how to trace a change and test it by hand until you understand how the code behaves                                 |
-| [`/teach-me`](skills/teach-me/SKILL.md)     | retrieval practice on a concept — guided one step at a time, no answers handed over, until you can recall it whole           |
+| [`/coach-me`](skills/coach-me/SKILL.md)     | retrieval practice on a concept — guided one step at a time, no answers handed over, until you can recall it whole           |
+| [`/teach-me`](skills/teach-me/SKILL.md)     | the minimum core of a concept, taught one step at a time — just enough to answer it in an interview                          |
 | [`/to-kata`](skills/to-kata/SKILL.md)       | learning from a codebase by rebuilding part of it — a self-contained practice PRD to implement, then compare to the original |
 
 ## Productivity
