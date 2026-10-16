@@ -1,0 +1,5 @@
+interface:
+  display_name: "Break It"
+  short_description: "Too much detail to follow — break it into smaller steps, one at a time, and check your restated understanding for gaps"
+policy:
+  allow_implicit_invocation: false
