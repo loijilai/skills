@@ -1,0 +1,5 @@
+interface:
+  display_name: "Review Algo"
+  short_description: "After /drill-algo, review the problem from the first mistake, one issue at a time"
+policy:
+  allow_implicit_invocation: false

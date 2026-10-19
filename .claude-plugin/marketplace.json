@@ -14,7 +14,7 @@
       "name": "learning",
       "source": "./",
       "description": "Learn a concept or a piece of code by working it out yourself.",
-      "skills": ["./skills/trace-code", "./skills/coach-me", "./skills/teach-me", "./skills/to-kata", "./skills/break-it", "./skills/drill-algo"]
+      "skills": ["./skills/trace-code", "./skills/coach-me", "./skills/teach-me", "./skills/to-kata", "./skills/break-it", "./skills/drill-algo", "./skills/review-algo"]
     },
     {
       "name": "productivity",
