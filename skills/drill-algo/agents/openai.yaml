@@ -1,5 +1,5 @@
 interface:
   display_name: "Drill Algo"
-  short_description: "Mock whiteboard interview — answer in six steps on your own, get nudged only on missed steps, then scored"
+  short_description: "Mock whiteboard interview at a real interview's pace — the interviewer gates your approach, then scores your habits"
 policy:
   allow_implicit_invocation: false

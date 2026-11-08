@@ -61,7 +61,7 @@ group.
 | [`/teach-me`](skills/teach-me/SKILL.md)       | the minimum core of a concept, taught one step at a time — just enough to answer it in an interview                                  |
 | [`/to-kata`](skills/to-kata/SKILL.md)         | learning from a codebase by rebuilding part of it — a self-contained practice PRD to implement, then compare to the original         |
 | [`/break-it`](skills/break-it/SKILL.md)       | the reply has too much detail to follow — break it into smaller steps, one at a time, and check your restated understanding for gaps |
-| [`/drill-algo`](skills/drill-algo/SKILL.md)   | whiteboard interview practice — answer in six steps on your own, nudged only when you skip one, then scored                          |
+| [`/drill-algo`](skills/drill-algo/SKILL.md)   | whiteboard interview practice at a real pace — the interviewer gates your approach, then scores your habits                          |
 | [`/review-algo`](skills/review-algo/SKILL.md) | after /drill-algo — review the problem from the first mistake, one issue at a time                                                   |
 
 ## Productivity
