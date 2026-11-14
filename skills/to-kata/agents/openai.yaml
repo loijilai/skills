@@ -1,5 +1,5 @@
 interface:
   display_name: "To Kata"
-  short_description: "Extract a self-contained code kata PRD from the codebase"
+  short_description: "Extract one minimal feature from the codebase as a code kata"
 policy:
   allow_implicit_invocation: false

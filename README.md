@@ -60,7 +60,7 @@ group.
 | [`/trace-code`](skills/trace-code/SKILL.md)   | learning how to trace a change and test it by hand until you understand how the code behaves                                         |
 | [`/orient-me`](skills/orient-me/SKILL.md)     | no idea what a question is even asking — the topic it belongs to and why it exists, before any detail                                |
 | [`/teach-me`](skills/teach-me/SKILL.md)       | the minimum core of a concept, taught one step at a time — just enough to answer it in an interview                                  |
-| [`/to-kata`](skills/to-kata/SKILL.md)         | learning from a codebase by rebuilding part of it — a self-contained practice PRD to implement, then compare to the original         |
+| [`/to-kata`](skills/to-kata/SKILL.md)         | learning from a codebase by rebuilding part of it — one minimal feature to implement, then compare to the original                   |
 | [`/break-it`](skills/break-it/SKILL.md)       | the reply has too much detail to follow — break it into smaller steps, one at a time, and check your restated understanding for gaps |
 | [`/drill-algo`](skills/drill-algo/SKILL.md)   | whiteboard interview practice at a real pace — the interviewer gates your approach, then scores your habits                          |
 | [`/review-algo`](skills/review-algo/SKILL.md) | after /drill-algo — review the problem from the first mistake, one issue at a time                                                   |
